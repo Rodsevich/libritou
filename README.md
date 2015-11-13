@@ -4,4 +4,4 @@ Una boludez hecha para probar SASS y JADE, basada en [Moleskine's Codrops](http:
 
 Este es el branch para poder hostearlo en github
 
-[ver online](https://rodsevich.github.com/Libritou)
+[ver online](https://rodsevich.github.io/Libritou)
