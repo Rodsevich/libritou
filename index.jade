@@ -1,0 +1,110 @@
+//output: index.html
+doctype html
+html(lang="es")
+  head
+    title Motivador Personal
+    link(rel="stylesheet", href="estilo.css", type="text/css")
+    link(rel='stylesheet', href='booklet/jquery.booklet.1.1.0.css', type="text/css")
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.4.4.min.js')
+    script(type='text/javascript', src='booklet/jquery.easing.1.3.js')
+    script(type='text/javascript', src='booklet/jquery.booklet.1.1.0.min.js')
+    link(href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css')
+  body
+    section#contenido
+      #contenedor-libro
+        #libro
+          .b-load
+            div
+              h1.titulo.
+                Poema<br />
+                del<br />
+                Programador
+            div
+              p.
+                La programación en mi vida<br />
+                Es como el agua bendita<br />
+                Que aparte que da vida<br />
+                Mi alma codifica<br />
+            div
+              p.
+                En unos y ceros explico<br />
+                Lo que en mi mente me imagino<br />
+                Solo un computador necesito<br />
+                Para explicar lo que predico<br />
+            div
+              p.
+                Recuerdo esa vez, aunque confuso<br />
+                Que con un código profundo<br />
+                En una pantalla de fondo oscuro<br />
+                Vi lo que sería mi primer “Hola mundo”<br />
+            div
+              p.
+                Ahora muchos lenguajes hablo y escribo<br />
+                Pero muchos no entienden lo que digo<br />
+                Solo un complejo circuito<br />
+                Es capaz de razonar conmigo<br />
+            div
+              p.
+                A veces me dicen loco y me siento confundido<br />
+                De pronto puedo ser un poco extrovertido<br />
+                Pero si no fuera por mis códigos exhaustivos<br />
+                Sus vidas hoy no tendrían sentido<br />
+            div
+              p.
+                Con un “imprimir” te lo digo<br />
+                Con un ciclo “for” te lo repito<br />
+                Y Con un “if” te lo ratifico<br />
+                Soy feliz, soy programador a eso me dedico<br />
+            div
+              h2.autor <br />Miguel Ángel Teherán García
+              
+
+    script(type="text/javascript").
+          $(function() {
+            $('#libro').booklet({
+              name:               null,                            // name of the booklet to display in the document title bar
+              width:              parseInt($('#libro').css("width")),// container width
+              height:             parseInt($('#libro').css("height")),       // container height
+              speed:              600,                             // speed of the transition between pages
+              direction:          'LTR',                           // direction of the overall content organization, default LTR, left to right, can be RTL for languages which read right to left
+              startingPage:       3,                               // index of the first page to be displayed
+              easing:             'easeInOutQuad',                 // easing method for complete transition
+              easeIn:             'easeInQuad',                    // easing method for first half of transition
+              easeOut:            'easeOutQuad',                   // easing method for second half of transition
+
+              closed:             true,                           // start with the book "closed", will add empty pages to beginning and end of book
+              closedFrontTitle:   null,                            // used with "closed", "menu" and "pageSelector", determines title of blank starting page
+              closedFrontChapter: null,                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank starting page
+              closedBackTitle:    null,                            // used with "closed", "menu" and "pageSelector", determines chapter name of blank ending page
+              closedBackChapter:  null,                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
+              covers:             true,                           // used with  "closed", makes first and last pages into covers, without page numbers (if enabled)
+
+              pagePadding:        0,                              // padding for each page wrapper
+              pageNumbers:        false,                            // display page numbers on each page
+
+              hovers:             true,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
+              overlays:           true,                            // enables navigation using a page sized overlay, when enabled links inside the content will not be clickable
+              tabs:               false,                           // adds tabs along the top of the pages
+              tabWidth:           60,                              // set the width of the tabs
+              tabHeight:          20,                              // set the height of the tabs
+              arrows:             false,                           // adds arrows overlayed over the book edges
+              cursor:             'pointer',                       // cursor css setting for side bar areas
+
+              hash:               false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
+              keyboard:           true,                            // enables navigation with arrow keys (left: previous, right: next)
+              next:               null,          			// selector for element to use as click trigger for next page
+              prev:               null,          			// selector for element to use as click trigger for previous page
+
+              menu:               null,                            // selector for element to use as the menu area, required for 'pageSelector'
+              pageSelector:       false,                           // enables navigation with a dropdown menu of pages, requires 'menu'
+              chapterSelector:    false,                           // enables navigation with a dropdown menu of chapters, determined by the "rel" attribute, requires 'menu'
+
+              shadows:            true,                            // display shadows on page animations
+              shadowTopFwdWidth:  166,                             // shadow width for top forward anim
+              shadowTopBackWidth: 166,                             // shadow width for top back anim
+              shadowBtmWidth:     50,                              // shadow width for bottom shadow
+
+              before:             function(){},                    // callback invoked before each page turn animation
+              after:              function(){}                     // callback invoked after each page turn animation
+            });
+          });
